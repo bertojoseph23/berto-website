@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-center transition-opacity duration-300">
       <div className="text-sm font-mono tracking-wider">
-        <span className="cyan-glow">BJ</span>
+        <span className="cyan-glow">2026</span>
         <span className="text-white/30 mx-2">/</span>
         <span className="text-white/60">BERTO JOSEPH</span>
       </div>

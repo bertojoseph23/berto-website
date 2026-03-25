@@ -33,16 +33,18 @@ export default function VenturesSection() {
   return (
     <section id="ventures" className="min-h-screen flex items-center px-4 sm:px-8 md:px-16 py-24">
       <div className="max-w-7xl mx-auto w-full">
-        <div className="mb-16">
+        <div data-reveal className="reveal-on-scroll mb-16">
           <p className="text-xs font-mono tracking-[0.3em] cyan-glow mb-3 uppercase">Ventures</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-white">What I&apos;m Building</h2>
         </div>
 
         <div className="space-y-8">
-          {ventures.map((v) => (
+          {ventures.map((v, index) => (
             <div
               key={v.name}
-              className="group border border-white/[0.08] rounded-lg p-6 sm:p-8 bg-white/[0.02] card-hover"
+              data-reveal
+              style={{ ["--reveal-delay" as string]: `${index * 90}ms` }}
+              className="reveal-on-scroll group border border-white/[0.08] rounded-lg p-6 sm:p-8 bg-white/[0.02] card-hover"
             >
               <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 md:gap-10">
                 {/* Left: Name + Meta */}

@@ -18,7 +18,11 @@ export default function AboutSection() {
   ]
 
   return (
-    <section id="about" className="min-h-screen flex items-center px-4 sm:px-8 md:px-16 py-24">
+    <section
+      id="about"
+      data-reveal
+      className="reveal-on-scroll min-h-screen flex items-center px-4 sm:px-8 md:px-16 py-24"
+    >
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
         {/* Bio */}
         <div>
@@ -39,7 +43,7 @@ export default function AboutSection() {
               well-designed systems can do meaningful work autonomously.
             </p>
             <p className="text-white/50 text-sm italic">
-              B.S. Computer Science, Morgan State University &apos;19
+              B.S. Computer Science, Morgan State University
             </p>
           </div>
 
