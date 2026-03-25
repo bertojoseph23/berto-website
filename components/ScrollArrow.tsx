@@ -2,13 +2,19 @@
 
 import { ChevronDown } from "lucide-react"
 
-export default function ScrollArrow() {
+interface ScrollArrowProps {
+  onClick?: () => void
+}
+
+export default function ScrollArrow({ onClick }: ScrollArrowProps) {
   return (
-    <div className="animate-bounce">
-      <ChevronDown
-        className="text-[var(--cyan)] opacity-50 cursor-pointer w-8 h-8"
-        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
-      />
-    </div>
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label="Scroll to next section"
+      className="animate-bounce rounded-full p-2 text-[var(--cyan)]/70 transition-colors hover:text-[var(--cyan)]"
+    >
+      <ChevronDown className="h-8 w-8" />
+    </button>
   )
 }

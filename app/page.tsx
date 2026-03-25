@@ -32,6 +32,10 @@ export default function Home() {
     event.currentTarget.style.setProperty("--spot-opacity", "0")
   }
 
+  const scrollToAbout = () => {
+    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
+  }
+
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY
@@ -144,13 +148,13 @@ export default function Home() {
               </p>
             </QuoteBox>
           </div>
-        </section>
 
-        {showScrollArrow && (
-          <div className="fixed bottom-10 left-1/2 transform -translate-x-1/2 z-20">
-            <ScrollArrow />
-          </div>
-        )}
+          {showScrollArrow && (
+            <div className="absolute bottom-10 left-1/2 z-20 -translate-x-1/2">
+              <ScrollArrow onClick={scrollToAbout} />
+            </div>
+          )}
+        </section>
 
         <AboutSection />
         <VenturesSection />
