@@ -5,7 +5,7 @@ const ventures = [
     status: "Approaching Launch",
     statusColor: "text-green-400",
     description:
-      "Transforms how people discover, plan, and book travel. AI agents generate personalized itineraries, surface relevant options, and remove the friction from trip planning.",
+      "An AI-native travel platform that rethinks trip planning from the ground up. Instead of toggling between tabs and comparison sites, OutaHere uses intelligent agents to generate personalized itineraries, surface relevant options, and handle the logistics — so the only decision left is where to go.",
     stack: ["Next.js", "Supabase", "Groq", "Stripe"],
     domain: "OutaHere.ai",
   },
@@ -15,7 +15,7 @@ const ventures = [
     status: "Active Development",
     statusColor: "text-[var(--cyan)]",
     description:
-      "21 specialized AI agents, each handling a distinct function in career development and business operations. Freelance management, invoicing, certification tracking — unified under one system.",
+      "A comprehensive AI platform built around 21 specialized agents, each designed to handle a distinct function in career development and business operations. Freelance management, invoicing, certification tracking, and workflow automation — unified under one system designed to work for you, not the other way around.",
     stack: ["Next.js", "Supabase", "Stripe"],
   },
   {

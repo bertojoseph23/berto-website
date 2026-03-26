@@ -6,15 +6,31 @@ export default function AboutSection() {
     { name: "Professional Scrum Master I", year: "2020" },
   ]
 
-  const skills = [
-    "Cloud Infrastructure",
-    "DevSecOps",
-    "Systems Architecture",
-    "AI / Agentic Systems",
-    "Blockchain / Web3",
-    "Next.js / React",
-    "Supabase",
-    "AWS",
+  const skillCategories = [
+    {
+      label: "Languages",
+      items: ["Python", "TypeScript / JavaScript", "GoLang", "C / C++", "Bash / PowerShell"],
+    },
+    {
+      label: "Cloud & Infrastructure",
+      items: ["AWS", "Terraform", "Docker", "CloudFormation / CDK"],
+    },
+    {
+      label: "CI/CD & DevSecOps",
+      items: ["GitLab CI/CD", "Jenkins", "SonarQube", "Checkmarx"],
+    },
+    {
+      label: "Data & Observability",
+      items: ["CloudWatch", "OpenSearch", "Sentry", "Medallion Architecture"],
+    },
+    {
+      label: "Full-Stack (Ventures)",
+      items: ["Next.js / React", "Supabase", "Tailwind CSS", "Three.js"],
+    },
+    {
+      label: "AI & Blockchain",
+      items: ["Groq / LLMs", "Agentic Systems", "Web3 / DeFi"],
+    },
   ]
 
   return (
@@ -56,6 +72,9 @@ export default function AboutSection() {
               1st Place — IBM Atlanta Coding Hackathon, 2018
             </p>
             <p className="text-sm text-white/60 mt-1">
+              Featured in National Industry Publication, 2021
+            </p>
+            <p className="text-sm text-white/60 mt-1">
               Northrop Grumman Software Engineer Apprentice Program, 2020
             </p>
           </div>
@@ -68,11 +87,22 @@ export default function AboutSection() {
             <p className="text-xs font-mono tracking-[0.3em] cyan-glow mb-4 uppercase">
               Technical Domain
             </p>
-            <div className="grid grid-cols-2 gap-3">
-              {skills.map((skill) => (
-                <div key={skill} className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[var(--cyan)] opacity-60" />
-                  <span className="text-sm text-white/80">{skill}</span>
+            <div className="space-y-5">
+              {skillCategories.map((cat) => (
+                <div key={cat.label}>
+                  <p className="text-xs font-mono text-[var(--gold)] opacity-70 mb-2 tracking-wider">
+                    {cat.label}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {cat.items.map((item) => (
+                      <span
+                        key={item}
+                        className="text-xs px-2.5 py-1 rounded border border-white/[0.08] text-white/75 bg-white/[0.03]"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
