@@ -17,12 +17,7 @@ export default function ContactSection() {
               one of the ventures? Reach out.
             </p>
 
-            <p className="text-sm text-white/45 leading-relaxed mb-12 max-w-xl">
-              The panel to the right gives the contact section a little more motion and depth
-              without competing with the hero scene.
-            </p>
-
-            <div className="space-y-6">
+            <div className="space-y-6 mt-10">
               <a
                 href="mailto:berto.joseph@outlook.com"
                 className="group flex items-center gap-4 p-4 border border-white/[0.08] rounded-lg bg-white/[0.02] card-hover"

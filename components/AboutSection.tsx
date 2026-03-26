@@ -49,9 +49,10 @@ export default function AboutSection() {
 
           <div className="space-y-5 text-white/70 leading-relaxed">
             <p>
-              Cloud and DevSecOps engineer with 8+ years building secure, high-availability systems
-              at scale. Works at the intersection of reliability, security engineering, and systems
-              architecture — designing for performance and compliance from the ground up.
+              8+ years spanning embedded systems and cloud infrastructure, operating at the intersection
+              of reliability, security engineering, and compliance. Career trajectory from firmware and
+              FPGA-based platforms to enterprise cloud architecture and zero-trust DevSecOps — building
+              systems that hold up under real pressure.
             </p>
             <p>
               Quietly building a portfolio of AI-native ventures: a travel platform, a business

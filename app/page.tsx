@@ -83,7 +83,7 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="relative w-full h-screen bg-[var(--deep-bg)] text-white overflow-x-hidden">
+    <main className="relative w-full min-h-screen bg-[var(--deep-bg)] text-white overflow-x-hidden">
       {/* 3D Canvas */}
       <div className="fixed inset-0 z-0">
         <Canvas>

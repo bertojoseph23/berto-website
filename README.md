@@ -29,9 +29,9 @@ Elegant sci-fi aesthetic. Deep navy-black background, electric cyan (`#00D4FF`) 
 | Section | Content |
 |---|---|
 | **Hero** | Name, title (Cloud Engineer + AI Founder), tagline, 3D planet background |
-| **About** | Real bio, technical skills, certifications, education, recognition |
+| **About** | Bio (embedded → cloud → founder arc), categorized skills (6 groups), certifications, recognition |
 | **Ventures** | OutaHere (travel AI), Levelon (career automation), Vaultis (blockchain treasury) — each with status, description, tech stack |
-| **Contact** | Email + GitHub as clickable cards |
+| **Contact** | Email + GitHub cards, Spline 3D panel |
 
 ---
 
@@ -52,14 +52,22 @@ Elegant sci-fi aesthetic. Deep navy-black background, electric cyan (`#00D4FF`) 
 - [x] Updated 3D planet scene to match new palette
 - [x] Replaced fake contact form with real contact cards
 - [x] Fixed metadata (title, description)
+- [x] Categorized skills into 6 groups (Languages, Cloud, CI/CD, Data, Full-Stack, AI/Blockchain)
+- [x] Updated bio to reflect embedded → cloud → founder arc
+- [x] Added national publication recognition
+- [x] Removed stray dev note from contact section
+- [x] Added Open Graph + Twitter Card meta tags
+- [x] Added robots.txt + sitemap.xml
+- [x] Added mobile hamburger menu (responsive header)
+- [x] Fixed `h-screen` → `min-h-screen` on main container
+- [x] Verified clean build (`pnpm build` passes)
 
 ### Next
 
 - [ ] Visual polish pass (run dev, review in browser)
-- [ ] Mobile responsiveness check
 - [ ] Deploy to Vercel
 - [ ] Custom domain setup
-- [ ] Open Graph / social preview tags
+- [ ] OG preview image (screenshot or designed asset)
 
 ---
 
