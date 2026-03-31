@@ -1,143 +1,88 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { Github, Mail, ArrowUpRight } from "lucide-react"
+import { SplineScene } from "@/components/ui/spline"
 
 export default function ContactSection() {
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    message: "",
-  })
-
-  const [status, setStatus] = useState<null | "sending" | "success" | "error">(null)
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormState({
-      ...formState,
-      [e.target.name]: e.target.value,
-    })
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setStatus("sending")
-
-    // Simulate form submission
-    setTimeout(() => {
-      setStatus("success")
-      setFormState({ name: "", email: "", message: "" })
-    }, 1500)
-  }
-
   return (
-    <section id="contact" className="min-h-screen flex items-center px-4 sm:px-8 md:px-16 py-24">
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
-        <div>
-          <h2 className="text-sm uppercase tracking-widest text-[#9F0000] red-glow mb-2">TRANSMISSION</h2>
-          <h3 className="text-3xl sm:text-4xl font-bold mb-6 text-[#9F0000]">CONTACT</h3>
+    <section id="contact" className="min-h-[85vh] flex items-center px-4 sm:px-8 md:px-16 py-24">
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[0.9fr_1.15fr] lg:gap-14">
+          <div data-reveal className="reveal-on-scroll max-w-2xl">
+            <p className="text-xs font-mono tracking-[0.3em] cyan-glow mb-3 uppercase">Contact</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Get In Touch</h2>
 
-          <div className="mt-8 space-y-4 text-gray-300">
-            <p>
-              Ready to collaborate on your next digital project? Send a transmission and I'll respond within 48 hours.
+            <p className="text-white/60 leading-relaxed mb-8">
+              Interested in working together, talking infrastructure, or learning more about
+              one of the ventures? Reach out.
             </p>
 
-            <div className="mt-12 space-y-4">
-              <div>
-                <h4 className="text-sm uppercase tracking-widest text-[#9F0000] red-glow mb-2">LOCATION</h4>
-                <p>San Francisco, CA</p>
-              </div>
-
-              <div>
-                <h4 className="text-sm uppercase tracking-widest text-[#9F0000] red-glow mb-2">EMAIL</h4>
-                <p>hello@bertojoseph.com</p>
-              </div>
-
-              <div>
-                <h4 className="text-sm uppercase tracking-widest text-[#9F0000] red-glow mb-2">SOCIAL</h4>
-                <div className="flex gap-4">
-                  <a href="#" className="hover:text-[#9F0000] transition-colors">
-                    Twitter
-                  </a>
-                  <a href="#" className="hover:text-[#9F0000] transition-colors">
-                    LinkedIn
-                  </a>
-                  <a href="#" className="hover:text-[#9F0000] transition-colors">
-                    GitHub
-                  </a>
+            <div className="space-y-6 mt-10">
+              <a
+                href="mailto:berto.joseph@outlook.com"
+                className="group flex items-center gap-4 p-4 border border-white/[0.08] rounded-lg bg-white/[0.02] card-hover"
+              >
+                <div className="w-10 h-10 rounded-full border border-[var(--cyan)]/20 flex items-center justify-center">
+                  <Mail className="w-4 h-4 text-[var(--cyan)] opacity-70" />
                 </div>
-              </div>
+                <div className="flex-1">
+                  <p className="text-xs font-mono tracking-wider text-white/40 uppercase mb-0.5">Email</p>
+                  <p className="text-white/80 group-hover:text-[var(--cyan)] transition-colors">
+                    berto.joseph@outlook.com
+                  </p>
+                </div>
+                <ArrowUpRight className="w-4 h-4 text-white/20 group-hover:text-[var(--cyan)] transition-colors" />
+              </a>
+
+              <a
+                href="https://github.com/bertojoseph23"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-4 p-4 border border-white/[0.08] rounded-lg bg-white/[0.02] card-hover"
+              >
+                <div className="w-10 h-10 rounded-full border border-[var(--cyan)]/20 flex items-center justify-center">
+                  <Github className="w-4 h-4 text-[var(--cyan)] opacity-70" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-xs font-mono tracking-wider text-white/40 uppercase mb-0.5">GitHub</p>
+                  <p className="text-white/80 group-hover:text-[var(--cyan)] transition-colors">
+                    bertojoseph23
+                  </p>
+                </div>
+                <ArrowUpRight className="w-4 h-4 text-white/20 group-hover:text-[var(--cyan)] transition-colors" />
+              </a>
             </div>
           </div>
-        </div>
 
-        <div>
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label htmlFor="name" className="text-sm uppercase tracking-widest text-[#9F0000] red-glow mb-2 block">
-                Name
-              </label>
-              <Input
-                id="name"
-                name="name"
-                value={formState.name}
-                onChange={handleChange}
-                required
-                className="bg-white/5 border-white/20 focus:border-[#9F0000] text-white"
-              />
+          <div
+            data-reveal
+            style={{ ["--reveal-delay" as string]: "120ms" }}
+            className="reveal-on-scroll contact-spline-panel relative min-h-[420px] overflow-hidden rounded-[28px] border border-white/[0.08] bg-black/45 backdrop-blur-sm"
+          >
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,212,255,0.08),transparent_34%),radial-gradient(circle_at_75%_25%,rgba(201,168,76,0.1),transparent_28%)]" />
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+
+            <div className="absolute left-5 top-5 z-20 rounded-full border border-white/10 bg-black/45 px-3 py-1 text-[11px] font-mono uppercase tracking-[0.2em] text-white/45 backdrop-blur-sm">
+              Live Contact Panel
             </div>
 
-            <div>
-              <label htmlFor="email" className="text-sm uppercase tracking-widest text-[#9F0000] red-glow mb-2 block">
-                Email
-              </label>
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                value={formState.email}
-                onChange={handleChange}
-                required
-                className="bg-white/5 border-white/20 focus:border-[#9F0000] text-white"
-              />
+            <div className="absolute inset-x-5 bottom-5 z-20 rounded-2xl border border-white/10 bg-black/45 p-4 backdrop-blur-md">
+              <p className="text-[11px] font-mono uppercase tracking-[0.22em] text-[var(--gold)]/80">
+                Let&apos;s Build
+              </p>
+              <p className="mt-2 max-w-md text-sm leading-relaxed text-white/60">
+                Infrastructure, product systems, AI-native ventures, and the work that turns
+                ideas into stable, useful software.
+              </p>
             </div>
 
-            <div>
-              <label htmlFor="message" className="text-sm uppercase tracking-widest text-[#9F0000] red-glow mb-2 block">
-                Message
-              </label>
-              <Textarea
-                id="message"
-                name="message"
-                value={formState.message}
-                onChange={handleChange}
-                required
-                rows={5}
-                className="bg-white/5 border-white/20 focus:border-[#9F0000] text-white resize-none"
-              />
-            </div>
-
-            <Button
-              type="submit"
-              disabled={status === "sending"}
-              className="w-full bg-[#9F0000] hover:bg-[#9F0000]/80 text-white font-bold"
-            >
-              {status === "sending" ? "Sending..." : "Send Message"}
-            </Button>
-
-            {status === "success" && <p className="text-[#9F0000] red-glow text-center">Message sent successfully!</p>}
-
-            {status === "error" && (
-              <p className="text-red-400 text-center">There was an error sending your message. Please try again.</p>
-            )}
-          </form>
+            <SplineScene
+              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+              className="h-full w-full"
+            />
+          </div>
         </div>
       </div>
     </section>
   )
 }
-
