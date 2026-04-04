@@ -2,6 +2,7 @@
 
 Personal portfolio site for Berto Joseph — cloud & DevSecOps engineer, AI founder.
 
+**Live site:** [bertojoseph.com](https://bertojoseph.com)
 **Live repo:** [github.com/bertojoseph23/berto-website](https://github.com/bertojoseph23/berto-website)
 
 ---
@@ -38,7 +39,7 @@ Elegant sci-fi aesthetic. Deep navy-black background, electric cyan (`#00D4FF`) 
 ## Current State
 
 - **Branch:** `revamp/elegant-scifi`
-- **Status:** Core revamp complete — real content, new color palette, updated 3D scene
+- **Status:** Live on `bertojoseph.com` with the core revamp complete — real content, new color palette, updated 3D scene
 - **Builds:** Clean (`pnpm build` passes)
 
 ### Done
@@ -65,9 +66,11 @@ Elegant sci-fi aesthetic. Deep navy-black background, electric cyan (`#00D4FF`) 
 ### Next
 
 - [ ] Visual polish pass (run dev, review in browser)
-- [ ] Deploy to Vercel
-- [ ] Custom domain setup
+- [x] Deploy to Vercel
+- [x] Custom domain setup (`bertojoseph.com`)
 - [ ] OG preview image (screenshot or designed asset)
+- [ ] Performance pass for 3D/Spline assets
+- [ ] Add analytics goals / conversion tracking
 
 ---
 
