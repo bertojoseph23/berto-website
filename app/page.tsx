@@ -40,9 +40,12 @@ export default function Home() {
     const handleScroll = () => {
       const scrolled = window.scrollY
       const viewportHeight = window.innerHeight
+      const viewportWidth = window.innerWidth
 
-      const s = 1.2 - (scrolled / viewportHeight) * 0.5
-      setScale(Math.max(0.7, s))
+      const baseScale = viewportWidth < 640 ? 1 : viewportWidth < 1024 ? 1.08 : 1.2
+      const minScale = viewportWidth < 640 ? 0.92 : viewportWidth < 1024 ? 0.82 : 0.7
+      const s = baseScale - (scrolled / viewportHeight) * 0.5
+      setScale(Math.max(minScale, s))
 
       setShowHeader(scrolled <= 50)
       setShowScrollArrow(scrolled < viewportHeight)
@@ -107,7 +110,7 @@ export default function Home() {
         {showHeader && <Header />}
 
         {/* Hero Section */}
-        <section className="h-screen flex flex-col justify-center items-center px-4 sm:px-8 md:px-16 relative">
+        <section className="relative flex min-h-[100svh] flex-col items-center justify-center px-4 pt-24 pb-12 sm:px-8 sm:pb-16 md:px-16">
           <div
             className="max-w-7xl w-full transition-transform duration-200 text-center"
             style={{ transform: `scale(${scale})` }}
@@ -120,7 +123,7 @@ export default function Home() {
               <span>AI</span>
             </div>
             <h1
-              className="hero-name text-5xl sm:text-6xl md:text-9xl font-bold tracking-tighter mb-4"
+              className="hero-name mb-4 text-4xl font-bold tracking-tight sm:text-6xl md:text-8xl lg:text-9xl"
               data-text="BERTO JOSEPH"
               onPointerEnter={updateHeroSpotlight}
               onPointerMove={updateHeroSpotlight}
@@ -128,17 +131,16 @@ export default function Home() {
             >
               BERTO JOSEPH
             </h1>
-            <div className="flex items-center justify-center gap-4 mt-6">
-              <div className="h-px w-16 bg-gradient-to-r from-transparent to-[var(--cyan)] opacity-50" />
-              <p className="text-xs font-mono tracking-[0.2em] text-white/40 uppercase">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+              <div className="hidden h-px w-16 bg-gradient-to-r from-transparent to-[var(--cyan)] opacity-50 sm:block" />
+              <p className="px-2 text-[10px] font-mono uppercase tracking-[0.18em] text-white/40 sm:text-xs sm:tracking-[0.2em]">
                 Systems &middot; Scale &middot; Intention
               </p>
-              <div className="h-px w-16 bg-gradient-to-l from-transparent to-[var(--cyan)] opacity-50" />
+              <div className="hidden h-px w-16 bg-gradient-to-l from-transparent to-[var(--cyan)] opacity-50 sm:block" />
             </div>
           </div>
 
-          {/* Quote positioned at bottom right */}
-          <div className="absolute bottom-28 right-4 sm:right-8 md:right-16 max-w-xs">
+          <div className="mt-12 w-full max-w-xs self-end sm:absolute sm:bottom-28 sm:right-8 sm:mt-0 md:right-16">
             <QuoteBox>
               <p className="text-sm text-gray-300 leading-relaxed">
                 &ldquo;Reliable systems make ambitious products look easy.&rdquo;
@@ -150,7 +152,7 @@ export default function Home() {
           </div>
 
           {showScrollArrow && (
-            <div className="absolute bottom-10 left-1/2 z-20 -translate-x-1/2">
+            <div className="absolute bottom-6 left-1/2 z-20 -translate-x-1/2 sm:bottom-10">
               <ScrollArrow onClick={scrollToAbout} />
             </div>
           )}

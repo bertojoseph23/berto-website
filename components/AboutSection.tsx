@@ -37,7 +37,7 @@ export default function AboutSection() {
     <section
       id="about"
       data-reveal
-      className="reveal-on-scroll min-h-screen flex items-center px-4 sm:px-8 md:px-16 py-24"
+      className="reveal-on-scroll min-h-screen px-4 py-20 sm:px-8 sm:py-24 md:px-16"
     >
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
         {/* Bio */}
@@ -118,7 +118,7 @@ export default function AboutSection() {
               {certifications.map((cert) => (
                 <div
                   key={cert.name}
-                  className="flex justify-between items-center py-2 border-b border-white/[0.06]"
+                  className="flex items-center justify-between gap-4 py-2 border-b border-white/[0.06]"
                 >
                   <span className="text-sm text-white/80">{cert.name}</span>
                   <span className="text-xs font-mono text-[var(--gold)] opacity-70">
