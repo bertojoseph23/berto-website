@@ -85,6 +85,19 @@
       0 0 16px rgba(201, 168, 76, 0.16);
   }
 
+  @media (max-width: 639px) {
+    .hero-signal {
+      gap: 0.5rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+    }
+
+    .hero-signal-bolt {
+      width: 0.8rem;
+      height: 0.8rem;
+    }
+  }
+
   .hero-signal-bolt {
     width: 0.95rem;
     height: 0.95rem;
@@ -261,6 +274,15 @@
 
   .transform-style-3d:hover {
     transform: rotateX(0deg) rotateY(0deg);
+  }
+
+  @media (hover: none) {
+    .card-hover:hover,
+    .transform-style-3d:hover {
+      border-color: inherit;
+      box-shadow: inherit;
+      transform: rotateX(3deg) rotateY(3deg);
+    }
   }
 
   .scanlines::before {
